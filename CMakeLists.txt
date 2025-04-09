@@ -13,7 +13,8 @@ else()
 endif()
 
 file (GLOB SOIL_SOURCES src/*.c)
-file (GLOB SOIL_HEADERS src/*.h)
+file (GLOB SOIL_HEADERS include/*.h)
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework CoreFoundation")
 
 add_library (SOIL ${SOIL_SOURCES} ${SOIL_HEADERS})
 target_link_libraries (SOIL ${LIBRARIES})
